@@ -81,6 +81,7 @@ async def qogita_scraper():
                 break
 
             soup = BeautifulSoup(response.text, "lxml")
+            print(soup.title.string)
 
             names = soup.select("a.line-clamp-2")
             prices = soup.select("span.whitespace-nowrap.font-figtree")
