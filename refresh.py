@@ -109,6 +109,8 @@ async def qogita_scraper():
                     "product_link": link,
                     "brand": brands[idx].get_text(strip=True)
                 })
+                print(product_data)
+                print(existing_gtins)
                 existing_gtins.add(gtin_text)
 
             logger.info(f"Collected so far: {len(product_data)} products")
