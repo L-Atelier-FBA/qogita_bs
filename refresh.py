@@ -81,13 +81,17 @@ async def qogita_scraper():
                 break
 
             soup = BeautifulSoup(response.text, "lxml")
-            print(soup.title.string)
+            print(soup.prettify())
 
             names = soup.select("a.line-clamp-2")
+            print(names)
             prices = soup.select("span.whitespace-nowrap.font-figtree")
+            print(prices)
             gtins = soup.select("pb-0.5.text-xs.font-light.text-gray-500")
+            print(gtins)
             brands = soup.select("a.font-outfit")
-
+            print(brands)
+            
             if not names:
                 logger.info("No products found. Ending pagination.")
                 break
@@ -109,8 +113,6 @@ async def qogita_scraper():
                     "product_link": link,
                     "brand": brands[idx].get_text(strip=True)
                 })
-                print(product_data)
-                print(existing_gtins)
                 existing_gtins.add(gtin_text)
 
             logger.info(f"Collected so far: {len(product_data)} products")
