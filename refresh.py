@@ -85,7 +85,7 @@ async def qogita_scraper():
 
             names = soup.select("a.line-clamp-2")
             prices = soup.select("span.whitespace-nowrap.font-figtree")
-            gtins = soup.select("p[data-dd-action-name='Product Card GTIN']")
+            gtins = soup.select("pb-0.5.text-xs.font-light.text-gray-500")
             brands = soup.select("a.font-outfit")
 
             if not names:
