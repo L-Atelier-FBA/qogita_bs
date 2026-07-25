@@ -85,7 +85,7 @@ async def qogita_scraper():
             print(names)
             prices = soup.select("span.whitespace-nowrap.font-figtree")
             print(prices)
-            gtins = soup.select("pb-0.5.text-xs.font-light.text-gray-500")
+            gtins = soup.select("text-xs.font-light.text-gray-500")
             print(gtins)
             brands = soup.select("a.font-outfit")
             print(brands)
